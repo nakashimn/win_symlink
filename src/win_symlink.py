@@ -1,6 +1,5 @@
 import os
 import sys
-import pyinstaller
 
 if __name__=="__main__":
 
@@ -12,5 +11,6 @@ if __name__=="__main__":
     if not os.path.exists(src_path):
         exit()
 
+    dirpath_desktop = os.getenv("HOMEDRIVE") + os.getenv("HOMEPATH") + "/Desktop"
     filename = os.path.basename(src_path)
-    os.symlink(src_path, "./{}".format(filename))
+    os.symlink(src_path, "{}/{}".format(dirpath_desktop, filename))
