@@ -1,0 +1,7 @@
+version: "3"
+services:
+    python:
+        build: ./environment
+        volumes:
+            - ./src:/code
+        tty: true
